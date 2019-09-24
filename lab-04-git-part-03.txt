@@ -172,6 +172,7 @@ It should work now!  What is the output?
 ----------
 cd ~
 cd /Users/student/Desktop/SGarnett/lab-04-version-control 
+git add --all
 
 
 ==========
@@ -180,6 +181,14 @@ cd /Users/student/Desktop/SGarnett/lab-04-version-control
 Add and commit it to your local repository and push to the remote repository.  Check github to see that your work was submitted.
 ----------
 cp hello.sh /Users/student/Desktop/SGarnett/lab-04-version-control 
+
+git add --all
+cd /Users/student/Desktop/SGarnett/lab-04-version-control 
+git add --all
+git commit -m "added test.sh and lab-04"
+git log --color
+git push origin master
+git status
 
 
 ==========
@@ -193,13 +202,49 @@ myfile10.txt
 
 Use a for loop to do this.  Add and save in your repository, push to the remote.
 ----------
-
+touch make_5_files.sh
+chmod u+x make_5_files.sh
+./make_5_files.sh
+nano make_5_files.sh
+I wrote
+#!/bin/bash
+for i in {1..10}
+do
+   echo "myfile$i.txt"
+done
+(result)
+When I typed
+./make_5_files.sh
+(the output was)
+myfile1.txt
+myfile2.txt
+myfile3.txt
+myfile4.txt
+myfile5.txt
+myfile6.txt
+myfile7.txt
+myfile8.txt
+myfile9.txt
+myfile10.txt
 
 ==========
 20.  Optional - Try writing this shell script!
 
-In your repository, create an executable shell script called say_twice.  It should take one argument - a filename.  It will cat out the contents of that file twice, with a row of dashes between each (use cat, echo... then cat again).  Create a test file calle foo.txt ... that contains foo, bar and baz... each on separate lines.
+In your repository, create an executable shell script called say_twice.  It should take one argument - a filename.  It will cat out the contents of that file twice, with a row of dashes between each (use cat, echo... then cat again).  Create a test file called foo.txt ... that contains foo, bar and baz... each on separate lines.
 
 Add and save in your repository, push to the remote.
 
 ----------
+touch say_twice.sh
+chmod u+x say_twice.sh
+./say_twice.sh
+nano say_twice.sh
+(I wrote)
+#!/bin/bash
+cat /Users/student/Desktop/SGarnett/lab-04-version-control
+echo ---
+cat /Users/student/Desktop/SGarnett/lab-04-version-control
+touch foo.txt
+echo "foo bar baz"
+(results)
+Everything worked except the text would not appear in the foo document
